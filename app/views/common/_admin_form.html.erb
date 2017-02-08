@@ -5,8 +5,7 @@
 	<div class="group"><%= f.input :price %></div>
 	<% if @product.photo.present? %>
 		<span>目前商品图</span><br>
-	<% else %>
-		<%= image_tag(@product.photo.thumb.url) %>
+		<%= image_tag(@product.photo.thumb.url, class: "thumbnail") %>
     <% end %>
 
 	  <div class="group"><%= f.input :photo, as: :file %></div>
