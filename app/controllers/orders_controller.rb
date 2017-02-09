@@ -7,10 +7,25 @@ class OrdersController < ApplicationController
     @order.total = current_cart.total_price
 
     if @order.save
+
+      # for order_list
+      current_cart.cart_items.each do |cart_item|
+        order_list = OrderList.new
+        order_list.order = @order
+        order_list.product_name = cart_item.product.title
+        order_list.product_price = cart_item.product.price
+        order_list.quantity = cart_item.quantity
+        order_list.save
+      end
       redirect_to order_path(@order)
     else
       render "carts/checkout"
     end
+  end
+
+  def show
+    @order = Order.find(params[:id])
+    @order_lists = @order.order_lists
   end
 
   private
