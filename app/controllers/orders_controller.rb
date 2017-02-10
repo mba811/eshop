@@ -17,6 +17,10 @@ class OrdersController < ApplicationController
         order_list.quantity = cart_item.quantity
         order_list.save
       end
+
+      # clean cart
+      current_cart.clean!
+
       redirect_to order_path(@order.token)
     else
       render "carts/checkout"
@@ -29,7 +33,7 @@ class OrdersController < ApplicationController
   end
 
   private
-    
+
     def order_params
       params.require(:order).permit(:billing_name, :billing_address, :shipping_name, :shipping_address)
     end
