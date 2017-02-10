@@ -3,9 +3,17 @@ class Cart < ApplicationRecord
   has_many :products, through: :cart_items, source: :product
 
   def add_product_to_cart(product)
-    ci = cart_items.build
-    ci.product = product
-    ci.quantity = 1
+    item = cart_items.where("product_id = ?", product.id)
+
+    if item.size < 1
+      ci = cart_items.build
+      ci.product = product
+      ci.quantity = 1
+    else
+      ci = item.first
+      ci.update_attribute(:quantity, ci.quantity + 1)
+    end
+
     ci.save
   end
 
