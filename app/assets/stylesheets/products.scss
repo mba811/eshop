@@ -7,3 +7,22 @@
   height: 1.2em;
   display: block;
 }
+
+.red{
+  color: #b61d1d;
+}
+
+.cart-badge {
+    display: inline-block;
+    min-width: 12px;
+    padding: 3px 7px 3px 7px;
+    font-size: 10px;
+    font-weight: normal;
+    color: #fff;
+    line-height: 1;
+    vertical-align: top;
+    white-space: nowrap;
+    text-align: center;
+    background-color: #b61d1d;
+    border-radius: 10px;
+}

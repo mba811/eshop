@@ -13,7 +13,7 @@
 			<ul class="nav navbar-nav navbar-right">
 					<li>
 						<%= link_to carts_path do %>
-							购物车 <i class="fa fa-shopping-cart"></i> (<%= current_cart.products.count %>)
+							<i class="fa fa-shopping-cart red" aria-hidden="true"></i>  购物车<span class="cart-badge"> <%= current_cart.products.count %></span>
 						<% end %>
 					
 					</li>
@@ -30,6 +30,7 @@
 							<% if current_user.admin? %>
 								<li><%= link_to("Admin Panel", admin_products_path) %></li>
 							<% end %>
+							<li><%= link_to("历史订单", orders_path) %></li>
 						    <li><%= link_to(content_tag(:i, "登出", class: "fa fa-sign-out"), destroy_user_session_path, method: :delete) %></li>
 						  </ul>
 					  </li>

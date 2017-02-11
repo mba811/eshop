@@ -14,6 +14,9 @@ class Cart < ApplicationRecord
       ci.update_attribute(:quantity, ci.quantity + 1)
     end
 
+    product.quantity -= 1
+    product.save
+
     ci.save
   end
 
