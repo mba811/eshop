@@ -30,6 +30,18 @@ class Cart < ApplicationRecord
     return sum
   end
 
+  def item_total_price(cart_item)
+    # item = cart_items.where("product_id = ?", product.id)
+    sum = 0
+
+    if cart_item.product.price.present?
+      sum += cart_item.quantity * cart_item.product.price
+    end
+
+    return sum
+  end
+
+
   def clean!
     cart_items.destroy_all
   end
