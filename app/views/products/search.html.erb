@@ -1,18 +1,6 @@
 <div class="container">
  <% unless @products.blank? %>
-  	<div class="dropdown clearfix pull-right">
-  		<button id="dropdownMenuDivider" class="btn btn-default dropdown-toggle"
-  			type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">排序
-  		<span class="caret"></span>
-  		</button>
-  		<ul class="dropdown-menu" aria-labelledby="dropdownMenuDivider">
-  			<li><%= link_to("价格从高到低", products_path(:order => "by_price_desc")) %></li>
-  			<li><%= link_to("价格从低到高", products_path(:order => "by_price_asc")) %></li>
-  			<li><%= link_to("标题", products_path(:order => "by_title")) %></li>
-  			<li><%= link_to("时间从早到晚", products_path(:order => "by_time_asc")) %></li>
-  			<li><%= link_to("时间从晚到早", products_path) %></li>
-  		</ul>
-  	</div>
+
     <div class="clearfix"></div>
     <div class="row">
       <% @products.each do |product| %>
