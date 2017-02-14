@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   # before_action :set_search
 
   def index
-    @products = Product.all
+    @products = Product.all.paginate(:page => params[:page], :per_page => 12)
     # @q = Product.ransack(params[:q])
   end
 
