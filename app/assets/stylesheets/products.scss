@@ -58,6 +58,7 @@ img {
     border-radius: 10px;
 }
 
+// minicart start ==>
 
 #mycart{
   z-index: 11;
@@ -191,3 +192,43 @@ strong, b {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
 }
+
+// <== minicart end
+
+// search form
+
+#search_section .wrapper {
+  display: block;
+  left: 0;
+  padding-top: 8px;
+}
+#search_section input[type="search"]{
+	width: 5px;
+	border-radius: 20px;
+	// position: absolute;
+	right: 0;
+	top: 10px;
+	z-index: 1001;
+	border: 0;
+	background: url(http://www.muji.com.cn/cn/store/contents/img/icon_search_b.png) no-repeat 10px center rgba(0,0,0,.05);
+	background-color: #f8f8f8;
+	background-size: 16px 17px;
+  color: #000;
+	padding-left: 30px; margin: 0; box-sizing: border-box; line-height: 2;
+	-webkit-transition: width .3s;
+	transition: width .3s;
+	cursor: pointer;
+	::-webkit-input-placeholder {color: #333};
+	::-moz-placeholder {color: #333};
+	:-moz-placeholder {color: #333};
+	:-ms-input-placeholder {color: #333};
+}
+#search_section input[type="search"]:focus {
+	width: 240px;
+	outline: none;
+	background-color: #f8f8f8;
+	cursor: text;
+  border: 1px solid #e7e7e7;
+}
+
+// minicart end 
