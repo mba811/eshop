@@ -1,3 +1,64 @@
+<div class="row header-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4">
+				<p class="welcome-msg">FREE SHIPPING ON ORDERS OVER</p>
+			</div>
+			<div class="col-md-8">
+				<ul>
+					<li><i class="fa fa-lock h_i"></i><a href="#"> FEEDBACK</a></li>
+					<li><i class="fa fa-lock h_i"></i><a href="#"> Store Locator</a></li>
+					<li><i class="fa fa-lock h_i"></i><a href="#"> Blog</a></li>
+					<li><i class="fa fa-lock h_i"></i><a href="#"> Newsletter</a></li>
+					<li><i class="fa fa-lock h_i"></i><a href="#"> Gift Registry</a></li>
+					<li><i class="fa fa-lock h_i"></i><a href="#"> 1-877-768-8888</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row header-middle clr">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-3">
+				<a href="/" class="logo"><img src="https://www.snugglebugz.ca/skin/frontend/snugglebugz/default/images/logo.png"></a>
+			</div>
+			<div class="col-md-9">
+				<ul>
+					<!-- search form -->
+					<li>
+						<section id="search_test">
+						<%= form_tag search_products_path, :method => :get  do %>
+							<div class="wrapper">
+								<input type="search" name="q" value="<%= params[:q] %>" placeholder="请输入要搜索的信息">
+							</div>
+						<% end %>
+					 </section>
+					</li>
+					<li><a href="#"> Store Locator</a></li>
+					<li><a href="#"> Store Locator</a></li>
+					<li><a href="#"> Blog</a></li>
+				</ul>
+			</div>
+
+				<!-- <div class="skip-links"> -->
+					<!-- search form -->
+					<!-- <li class="nav-search">
+						<section id="search_section">
+						<%= form_tag search_products_path, :method => :get  do %>
+							<div class="wrapper">
+								<input type="search" name="q" value="<%= params[:q] %>" placeholder="请输入要搜索的信息">
+							</div>
+						<% end %>
+					 </section>
+					</li>
+				</div> -->
+
+		</div>
+	</div>
+</div>
+<div class="clr"></div>
+
 <nav class="navbar navbar-default" role="navigation">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -19,9 +80,7 @@
 							<input type="search" name="q" value="<%= params[:q] %>" placeholder="请输入要搜索的信息">
 						</div>
 					<% end %>
-
-
-					</section>
+				 </section>
 				</li>
 				<!-- minicart -->
 				<%= render "common/minicart" %>

@@ -20,6 +20,155 @@ div {
     font-size: 0;
 }
 
+// for index layouts ===>
+
+.header-top {
+    padding: 13px 15px 10px 10px;
+    padding-right: 0;
+    display: block;
+    background-color: #c20430;
+}
+
+
+.welcome-msg {
+    float: left;
+    color: #ffffff;
+    font-size: 13px;
+    margin-left: 60px;
+    font-family: 'Montserrat', sans-serif;
+    margin-left: 20px;
+}
+
+.header-top ul {
+  float: right;
+  // margin-right: px;
+}
+
+.header-top ul li{
+  float: left;
+  margin-left: 10px;
+  border-right: 1px solid #6f625a;
+  padding-right: 10px;
+  list-style: none;
+}
+
+.header-top ul li a{
+  display: inline-block;
+  font-size: 13px;
+  text-decoration: none;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+
+.h_i {
+  color: #fff;
+  margin-right: 5px;
+}
+
+.header-middle{
+  height: 66px;
+}
+
+.logo {
+    display: block;
+    float: left;
+    width: 65%;
+    min-width: 100px;
+    min-height: 44px;
+    text-align: center;
+    padding: 10px;
+}
+
+
+.header-middle ul {
+  margin-top: 35px;
+  float: right;
+  // margin-right: px;
+}
+
+.header-middle ul li{
+  float: left;
+  margin-left: 10px;
+  padding-right: 15px;
+  list-style: none;
+}
+
+.header-middle ul li a{
+  font-family: 'Montserrat', sans-serif;
+  text-transform: uppercase;
+  color: #a0988f;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+
+// search form
+
+#search_test{
+  margin-right: 5px;
+}
+
+#search_test input[type="search"]{
+  background: url(http://www.muji.com.cn/cn/store/contents/img/icon_search_b.png) no-repeat 10px center rgba(0,0,0,.05);
+  background-color: red;
+  background-size: 16px 17px;
+  position: relative;
+  // margin-bottom: 15px;
+
+}
+
+#search_test input[type="search"]:focus {
+	width: 240px;
+	outline: none;
+	background-color: #f8f8f8;
+	cursor: text;
+  border: 1px solid #e7e7e7;
+}
+
+#search_section_t .wrapper {
+  // display: block;
+  left: 0;
+  padding-top: 8px;
+  // background-color: red;
+}
+#search_section_t input[type="search"]{
+	width: 5px;
+	border-radius: 20px;
+	position: absolute;
+	right: 0;
+	top: 10px;
+	z-index: 1001;
+	border: 0;
+	background: url(http://www.muji.com.cn/cn/store/contents/img/icon_search_b.png) no-repeat 10px center rgba(0,0,0,.05);
+	background-color: red;
+	background-size: 16px 17px;
+  color: #000;
+	padding-left: 30px; margin: 0; box-sizing: border-box; line-height: 2;
+	-webkit-transition: width .3s;
+	transition: width .3s;
+	cursor: pointer;
+	::-webkit-input-placeholder {color: #333};
+	::-moz-placeholder {color: #333};
+	:-moz-placeholder {color: #333};
+	:-ms-input-placeholder {color: #333};
+}
+#search_section_t input[type="search"]:focus {
+	width: 240px;
+	outline: none;
+	background-color: #f8f8f8;
+	cursor: text;
+  border: 1px solid #e7e7e7;
+}
+
+
+
+// <=== index layout end
+
+
+
 img {
     border: 0;
     vertical-align: middle;
@@ -42,6 +191,7 @@ img {
 .red{
   color: #b61d1d;
 }
+
 
 .cart-badge {
     display: inline-block;
@@ -231,4 +381,4 @@ strong, b {
   border: 1px solid #e7e7e7;
 }
 
-// minicart end 
+// minicart end
