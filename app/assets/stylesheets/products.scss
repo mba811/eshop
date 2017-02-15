@@ -7,6 +7,8 @@
   padding: 0;
 }
 
+// body { padding-top: 53px; }
+
 div {
     display: block;
 }
@@ -34,9 +36,7 @@ div {
     float: left;
     color: #ffffff;
     font-size: 13px;
-    margin-left: 60px;
     font-family: 'Montserrat', sans-serif;
-    margin-left: 20px;
 }
 
 .header-top ul {
@@ -69,81 +69,27 @@ div {
 }
 
 .header-middle{
-  height: 66px;
-}
-
-.logo {
-    display: block;
-    float: left;
-    width: 65%;
-    min-width: 100px;
-    min-height: 44px;
-    text-align: center;
-    padding: 10px;
+  height: 52px;
 }
 
 
-.header-middle ul {
-  margin-top: 35px;
-  float: right;
-  // margin-right: px;
-}
+/// search form
 
-.header-middle ul li{
-  float: left;
-  margin-left: 10px;
-  padding-right: 15px;
-  list-style: none;
-}
-
-.header-middle ul li a{
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  color: #a0988f;
-  font-weight: 600;
-  font-size: 14px;
-}
-
-
-// search form
-
-#search_test{
-  margin-right: 5px;
-}
-
-#search_test input[type="search"]{
-  background: url(http://www.muji.com.cn/cn/store/contents/img/icon_search_b.png) no-repeat 10px center rgba(0,0,0,.05);
-  background-color: red;
-  background-size: 16px 17px;
-  position: relative;
-  // margin-bottom: 15px;
-
-}
-
-#search_test input[type="search"]:focus {
-	width: 240px;
-	outline: none;
-	background-color: #f8f8f8;
-	cursor: text;
-  border: 1px solid #e7e7e7;
-}
-
-#search_section_t .wrapper {
-  // display: block;
+#search_section .wrapper {
+  display: block;
   left: 0;
-  padding-top: 8px;
-  // background-color: red;
+  padding-top: 12px;
 }
-#search_section_t input[type="search"]{
+#search_section input[type="search"]{
 	width: 5px;
 	border-radius: 20px;
-	position: absolute;
+	// position: absolute;
 	right: 0;
 	top: 10px;
 	z-index: 1001;
 	border: 0;
 	background: url(http://www.muji.com.cn/cn/store/contents/img/icon_search_b.png) no-repeat 10px center rgba(0,0,0,.05);
-	background-color: red;
+	background-color: #f8f8f8;
 	background-size: 16px 17px;
   color: #000;
 	padding-left: 30px; margin: 0; box-sizing: border-box; line-height: 2;
@@ -155,7 +101,7 @@ div {
 	:-moz-placeholder {color: #333};
 	:-ms-input-placeholder {color: #333};
 }
-#search_section_t input[type="search"]:focus {
+#search_section input[type="search"]:focus {
 	width: 240px;
 	outline: none;
 	background-color: #f8f8f8;
@@ -163,7 +109,101 @@ div {
   border: 1px solid #e7e7e7;
 }
 
+// header-bottom
+.header-bottom{
+  height: 56px;
+  background-color: #ffffff;
+  text-align: center;
+  // margin: 0 auto;
+  padding: 15px 0;
+}
+.header-bottom .container div{
+  // height: 56px;
+  // background-color: #ffffff;
+  // text-align: left;
+  // margin: 0 auto;
+  // display: block;
+  text-align: center;
+  display: block;
+}
 
+.header-bottom a{
+  color: #c20430;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 200;
+  text-transform: uppercase !important;
+  font-size: 16px;
+  text-transform: none;
+  padding: 0;
+  float: right;
+
+}
+
+
+#header-nav {
+    clear: both;
+    font-size: 0;
+    border-top: 1px solid #e1ded7;
+    border-bottom: 1px solid #e1ded7;
+}
+
+#header-nav #nav {
+    display: block;
+    position: relative;
+    z-index: 99;
+    // max-width: 1260px;
+    margin: 0 auto;
+}
+
+#header-nav #nav ul.nav-primary {
+    margin: 0;
+    // padding: 0 92px;
+    text-align: center;
+}
+
+#header-nav #nav ul.nav-primary li {
+   width: 16.66666%;
+   display: inline-block;
+   padding: 15px 0;
+}
+
+#header-nav #nav ul.nav-primary li > a {
+   color: #c20430;
+   font-family: 'Open Sans', sans-serif;
+   font-weight: 200;
+   text-transform: uppercase !important;
+   font-size: 16px;
+   text-transform: none;
+   padding: 0;
+   float: right;
+}
+
+.tl{
+  text-align: left;
+}
+.tr{
+  text-align: right;
+}
+.tc{
+  text-align: center;
+}
+// .header-nav li{
+//   float: left;
+//   margin: 15px 15px 15px 0;
+//   width: 15.1%;
+//   // border: 1px solid #000;
+// }
+//
+// .header-nav li a{
+//   color: #c20430;
+//   font-family: 'Open Sans', sans-serif;
+//   font-weight: 200;
+//   text-transform: uppercase !important;
+//   font-size: 16px;
+//   text-transform: none;
+//   padding: 0;
+//   float: right;
+// }
 
 // <=== index layout end
 
@@ -345,40 +385,6 @@ strong, b {
 
 // <== minicart end
 
-// search form
 
-#search_section .wrapper {
-  display: block;
-  left: 0;
-  padding-top: 8px;
-}
-#search_section input[type="search"]{
-	width: 5px;
-	border-radius: 20px;
-	// position: absolute;
-	right: 0;
-	top: 10px;
-	z-index: 1001;
-	border: 0;
-	background: url(http://www.muji.com.cn/cn/store/contents/img/icon_search_b.png) no-repeat 10px center rgba(0,0,0,.05);
-	background-color: #f8f8f8;
-	background-size: 16px 17px;
-  color: #000;
-	padding-left: 30px; margin: 0; box-sizing: border-box; line-height: 2;
-	-webkit-transition: width .3s;
-	transition: width .3s;
-	cursor: pointer;
-	::-webkit-input-placeholder {color: #333};
-	::-moz-placeholder {color: #333};
-	:-moz-placeholder {color: #333};
-	:-ms-input-placeholder {color: #333};
-}
-#search_section input[type="search"]:focus {
-	width: 240px;
-	outline: none;
-	background-color: #f8f8f8;
-	cursor: text;
-  border: 1px solid #e7e7e7;
-}
 
 // minicart end

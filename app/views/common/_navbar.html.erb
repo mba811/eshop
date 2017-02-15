@@ -17,63 +17,19 @@
 		</div>
 	</div>
 </div>
-<div class="row header-middle clr">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-3">
-				<a href="/" class="logo"><img src="https://www.snugglebugz.ca/skin/frontend/snugglebugz/default/images/logo.png"></a>
-			</div>
-			<div class="col-md-9">
-				<ul>
-					<!-- search form -->
-					<li>
-						<section id="search_test">
-						<%= form_tag search_products_path, :method => :get  do %>
-							<div class="wrapper">
-								<input type="search" name="q" value="<%= params[:q] %>" placeholder="请输入要搜索的信息">
-							</div>
-						<% end %>
-					 </section>
-					</li>
-					<li><a href="#"> Store Locator</a></li>
-					<li><a href="#"> Store Locator</a></li>
-					<li><a href="#"> Blog</a></li>
-				</ul>
-			</div>
 
-				<!-- <div class="skip-links"> -->
-					<!-- search form -->
-					<!-- <li class="nav-search">
-						<section id="search_section">
-						<%= form_tag search_products_path, :method => :get  do %>
-							<div class="wrapper">
-								<input type="search" name="q" value="<%= params[:q] %>" placeholder="请输入要搜索的信息">
-							</div>
-						<% end %>
-					 </section>
-					</li>
-				</div> -->
-
-		</div>
-	</div>
-</div>
-<div class="clr"></div>
-
+<div class="row header-middle">
 <nav class="navbar navbar-default" role="navigation">
-	<div class="container-fluid">
+	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="/">JDStore.4</a>
+			<!-- <a class="navbar-brand" href="/">JDStore.4</a> -->
+			<a href="/"><img src="https://www.snugglebugz.ca/skin/frontend/snugglebugz/default/images/logo.png"></a>
 		</div>
 
 		<div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
-			<ul class="nav navbar-nav">
-				<li class="active">
-					<%= link_to("Products", products_path) %>
-				</li>
-			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<!-- search form -->
-				<li class="nav-search">
+				<li>
 					<section id="search_section">
 					<%= form_tag search_products_path, :method => :get  do %>
 						<div class="wrapper">
@@ -106,5 +62,26 @@
 				  <% end %>
 			</ul>
 		</div>
+
 	</div>
 </nav>
+</div>
+
+<div class="clr"></div>
+<div class="row" id="header-nav">
+	<div class="container">
+	<nav id="nav">
+		<ul class="nav-primary">
+			<li><a href="#" style="float: left;">产品类别</a></li>
+			<li><a href="#" style="padding-right: 85px;">产品品牌</a></li>
+			<li><a href="#" style="padding-right: 55px;">刚刚上新</a></li>
+			<li><a href="#">SNUGGLE DEALS</a></li>
+			<li><a href="#">TOP SELLERS</a></li>
+			<li><a href="#">CLEARANCE</a></li>
+		</ul>
+	</nav></div>
+</div>
+
+
+
+</div>
