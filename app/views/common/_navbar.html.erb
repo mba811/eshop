@@ -1,27 +1,42 @@
+<div class="wrapper header-top">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-4 col-xs-6">
+				<p class="welcome-msg">FREE SHIPPING ON ORDERS OVER</p>
+			</div>
+			<div class="col-md-8 col-xs-12">
+				<ul>
+					<li><i class="fa fa-lock h_i"></i><a href="#"> FEEDBACK</a></li>
+					<li><i class="fa fa-lock h_i"></i><a href="#"> Store Locator</a></li>
+					<li><i class="fa fa-lock h_i"></i><a href="#"> Blog</a></li>
+					<li><i class="fa fa-lock h_i"></i><a href="#"> Newsletter</a></li>
+					<li><i class="fa fa-lock h_i"></i><a href="#"> Gift Registry</a></li>
+					<li><i class="fa fa-lock h_i"></i><a href="#"> 1-877-768-8888</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="wrapper header-middle">
 <nav class="navbar navbar-default" role="navigation">
-	<div class="container-fluid">
+	<div class="container">
 		<div class="navbar-header">
-			<a class="navbar-brand" href="/">JDStore.4</a>
+			<!-- <a class="navbar-brand" href="/">JDStore.4</a> -->
+			<a href="/"><img src="https://www.snugglebugz.ca/skin/frontend/snugglebugz/default/images/logo.png"></a>
 		</div>
 
 		<div id="bs-example-navbar-collapse-1" class="collapse navbar-collapse">
-			<ul class="nav navbar-nav">
-				<li class="active">
-					<%= link_to("Products", products_path) %>
-				</li>
-			</ul>
 			<ul class="nav navbar-nav navbar-right">
 				<!-- search form -->
-				<li class="nav-search">
+				<li>
 					<section id="search_section">
 					<%= form_tag search_products_path, :method => :get  do %>
 						<div class="wrapper">
 							<input type="search" name="q" value="<%= params[:q] %>" placeholder="请输入要搜索的信息">
 						</div>
 					<% end %>
-
-
-					</section>
+				 </section>
 				</li>
 				<!-- minicart -->
 				<%= render "common/minicart" %>
@@ -47,5 +62,23 @@
 				  <% end %>
 			</ul>
 		</div>
+
 	</div>
 </nav>
+</div>
+
+<div class="wrapper header-bottom">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2 col-xs-4 nav-1">
+				<a href="#">产品类别</a>
+
+			</div>
+			<div class="col-md-2 col-xs-4 nav-2"><a href="#">产品品牌</a></div>
+			<div class="col-md-2 col-xs-4 nav-3"><a href="#">刚刚上新</a></div>
+			<div class="col-md-2 col-xs-4"><a href="#">SNUGGLE DEALS</a></div>
+			<div class="col-md-2 col-xs-4"><a href="#">TOP SELLERS</a></div>
+			<div class="col-md-2 col-xs-4"><a href="#">CLEARANCE</a></div>
+		</div>
+	</div>
+</div>
