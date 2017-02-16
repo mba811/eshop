@@ -23,6 +23,10 @@ div {
 }
 
 // for index layouts ===>
+.wrapper{
+  width: 100%;
+  clear: both;
+}
 
 .header-top {
     padding: 13px 15px 10px 10px;
@@ -116,16 +120,13 @@ div {
   text-align: center;
   // margin: 0 auto;
   padding: 15px 0;
+  clear: both;
+  font-size: 0;
+  border-top: 1px solid #e1ded7;
+  border-bottom: 1px solid #e1ded7;
 }
-.header-bottom .container div{
-  // height: 56px;
-  // background-color: #ffffff;
-  // text-align: left;
-  // margin: 0 auto;
-  // display: block;
-  text-align: center;
-  display: block;
-}
+
+
 
 .header-bottom a{
   color: #c20430;
@@ -136,78 +137,364 @@ div {
   text-transform: none;
   padding: 0;
   float: right;
-
 }
 
-
-#header-nav {
-    clear: both;
-    font-size: 0;
-    border-top: 1px solid #e1ded7;
-    border-bottom: 1px solid #e1ded7;
+.header-bottom a:hover {
+  color: #afa69d;
+  text-decoration: none;
 }
 
-#header-nav #nav {
-    display: block;
-    position: relative;
-    z-index: 99;
-    // max-width: 1260px;
-    margin: 0 auto;
+.header-bottom .nav-1 a{
+  float: left;
+}
+.header-bottom .nav-2{
+  padding-right: 85px;
+}
+.header-bottom .nav-3{
+  padding-right: 55px;
 }
 
-#header-nav #nav ul.nav-primary {
-    margin: 0;
-    // padding: 0 92px;
+// ===> index banner
+
+.header-banner{
+  background: #F7F6F5;
+  padding-top: 20px;
+  // padding-bottom: 10px;
+  // border-bottom: 1px solid red;
+}
+
+.header-banner .header-banner-right-2 {
+  padding-top: 15px;
+}
+
+// <=== index banner
+
+// featured
+
+.featured{
+  background-color: #f7f6f5;
+  padding-top: 10px;
+  padding-bottom: 30px;
+}
+
+.featured-title{
+    padding: 0 5px 15px 0;
+}
+
+.featured-title a h1 {
+    color: #afa69d;
     text-align: center;
+    font-size: 27.5px;
+    text-transform: none;
+    background-image: url(https://www.snugglebugz.ca/skin/frontend/snugglebugz/default/images/large_dotted_background.png);
+    background-repeat: repeat-x;
+    background-position: center;
+    margin-bottom: 0;
+    font-family: 'Montserrat', sans-serif;
 }
 
-#header-nav #nav ul.nav-primary li {
-   width: 16.66666%;
-   display: inline-block;
-   padding: 15px 0;
+.featured-title a:hover {
+    color: #afa69d;
+    text-decoration: none;
+  }
+
+.featured-title a h1 span {
+    background-color: #f7f6f5;
+    padding: 0 20px;
 }
 
-#header-nav #nav ul.nav-primary li > a {
-   color: #c20430;
-   font-family: 'Open Sans', sans-serif;
-   font-weight: 200;
-   text-transform: uppercase !important;
-   font-size: 16px;
-   text-transform: none;
-   padding: 0;
-   float: right;
+a.category-link {
+    float: right;
+    color: #fa7699;
 }
 
-.tl{
-  text-align: left;
+a.category-link:hover {
+  color: #e4416e;
+  text-decoration: none;
 }
-.tr{
-  text-align: right;
+
+a.category-link span {
+  background: #f7f6f5;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: capitalize;
+  padding: 10px 0 10px 10px;
+  position: relative;
+  bottom: 31px;
+  text-transform: capitalize;
 }
-.tc{
-  text-align: center;
+
+// product-box
+
+.products-container {
+  padding-bottom: 10px;
 }
-// .header-nav li{
-//   float: left;
-//   margin: 15px 15px 15px 0;
-//   width: 15.1%;
-//   // border: 1px solid #000;
-// }
-//
-// .header-nav li a{
-//   color: #c20430;
-//   font-family: 'Open Sans', sans-serif;
-//   font-weight: 200;
-//   text-transform: uppercase !important;
-//   font-size: 16px;
-//   text-transform: none;
-//   padding: 0;
-//   float: right;
-// }
 
-// <=== index layout end
+.products-container .product-box{
+  background-color: #fff;
+  width: 240px;
+}
+.products-container img {
+  display: block;
+}
+.products-container .product-box .product-img-box{
+  // width: 100%;
+}
+
+.product-title-box h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #6f625a;
+    text-transform: none;
+    font-size: 16px;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+    display: block;
+    // font-size: 1.5em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 5px;
+    -webkit-margin-end: 5px;
+}
+
+.product-title-box h2 .brand {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+    text-transform: uppercase;
+    font-size: 14px;
+    color: #afa69d;
+    display: block;
+  }
+
+.rating-box{
+  width: 65px;
+  height: 13px;
+  background-repeat: repeat-x;
+  background-position: 0 -615px;
+  overflow: hidden;
+}
+.rating {
+  background-image: url(https://www.snugglebugz.ca/skin/frontend/snugglebugz/default/images/icon_sprite.png);
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  float: left;
+  height: 13px;
+  // background-repeat: repeat-x;
+  background-position: 0 -600px;
+}
+
+.price{
+  color: #fa7699;
+  font-size: 20px;
+}
+
+// product-box end
+
+// content-divided
+
+.content-divided{
+  clear: both;
+  background-color: #f7f6f5;
+  padding: 30px 5px 0 5px;
+  background-image: url(../images/large_dotted_background.png);
+  background-repeat: repeat-x;
+  background-position: bottom;
+  height: 10px;
+}
+.content-divided h2 {
+    color: #afa69d;
+    text-align: center;
+    font-size: 27.5px;
+    text-transform: none;
+    background-image: url(https://www.snugglebugz.ca/skin/frontend/snugglebugz/default/images/large_dotted_background.png);
+    background-repeat: repeat-x;
+    background-position: center;
+    margin-bottom: 0;
+    font-family: 'Montserrat', sans-serif;
+    span{
+      text-indent: -999em;
+    }
+}
 
 
+
+// content-divided end
+
+// footer
+
+
+.footer-nav-container{
+  padding-top: 30px;
+  border-top: 1px solid #e1ded7;
+}
+
+
+.footer-nav-list h5.footer-nav-title {
+    color: #c20430;
+    text-transform: capitalize;
+    font-size: 18px;
+    font-weight: 350;
+}
+
+@media only screen and (max-width: 979px){
+  .footer-nav-list h5.footer-nav-title  {
+      font-size: 14px;
+      padding: 10px 20px;
+      margin-bottom: 0;
+      border-bottom: 1px solid #a0988f;
+      color: #ffffff;
+  }
+}
+.footer-nav-list{
+  width: 23%;
+  float: left;
+  line-height: 2;
+
+  li{
+    list-style: none;
+  }
+}
+
+@media only screen and (min-width: 979px){
+  .footer-nav-list {
+      width: 20%;
+      min-height: 235px;
+  }
+}
+
+.footer-nav-links a{
+    font-size: 14px;
+    text-transform: capitalize;
+    color: #a0988f;
+    font-family: 'Open Sans', sans-serif;
+    text-transform: none;
+    font-size: 14px;
+    font-weight: 200;
+
+    a:hover{
+      text-decoration: underline;
+      color: #6f625a;
+    }
+}
+
+
+@media only screen and (max-width: 979px){
+  .footer-nav-links {
+      width: 100%;
+      margin: 0;
+
+      li{
+        background-color: #a0988f;
+        border-bottom: 1px solid #afa69d;
+        padding: 10px 25px;
+
+        a {
+          font-size: 12px;
+          color: #fff;
+
+          a:active{
+            text-decoration: underline;
+          }
+          a:hover{
+            text-decoration: none;
+          }
+        }
+      }
+      font-size: 12px;
+      color: #ffffff;
+  }
+}
+
+.footer-nav-links {
+  display: block;
+}
+
+@media only screen and (max-width: 979px) {
+  .ooter-nav-links {
+    display: none;
+  }
+}
+
+.block-contact-wrapper{
+  border-left: 3px dotted #f0efed;
+  min-height: 180px;
+}
+
+.block-contact {
+    float: right;
+    padding: 0 20px;
+    background-image: url(../images/light-dot-bkg-vert.png);
+    background-size: 7px;
+    background-repeat: repeat-y;
+    background-position: left;
+    min-height: 230px;
+    padding-left: 40px;
+}
+
+.block-contact span {
+    color: #fa7699;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+.block-content{
+  margin-top: 5px;
+  padding-top: 7px;
+}
+
+.block-content p {
+    text-transform: none;
+    color: #a0988f;
+    font-weight: 200;
+    font-family: 'Open Sans', sans-serif;
+    margin-bottom: 25px;
+    font-size: 13px;
+}
+// footer-container
+
+.footer-container{
+  background-color: #fa7699;
+  height: 100px;
+}
+
+.footer-container .footer-copyright {
+    float: left;
+    padding: 35px 0 20px 0;
+    color: #fff;
+    font-size: 12px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 200;
+    a{
+      color: #fff;
+      a:hover{
+        text-decoration: underline;
+      }
+    }
+}
+
+
+.footer-container .payment{
+  // float: left;
+  padding-top: 35px;
+}
+
+.payment img {
+    display: inline-block;
+    // vertical-align: middle;
+    margin-right: 10px;
+}
+
+// footer end
+
+// <=== featured end
+
+
+
+
+// some stuff
 
 img {
     border: 0;
