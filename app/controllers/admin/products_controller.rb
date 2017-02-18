@@ -36,10 +36,25 @@ class Admin::ProductsController < ApplicationController
     end
   end
 
-  def destory
+  def destroy
     @product = Product.find(params[:id])
     @product.destroy
+    flash[:notice] = "Product deleted."
     redirect_to admin_products_path
+  end
+
+  def onsale
+    @product = Product.find(params[:id])
+    @product.onsale!
+
+    redirect_to :back
+  end
+
+  def notsale
+    @product = Product.find(params[:id])
+    @product.notsale!
+
+    redirect_to :back
   end
 
 
