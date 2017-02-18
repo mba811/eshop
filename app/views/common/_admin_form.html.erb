@@ -8,7 +8,8 @@
 		<%= image_tag(@product.photo.thumb.url, class: "thumbnail") %>
     <% end %>
 
-	  <div class="group"><%= f.input :photo, as: :file %></div>
+	<div class="group"><%= f.input :photo, as: :file %></div>
+	<div class="group"><%= f.input :onsale %></div>
 
 	<%= f.submit "Submit", data: {disable_with: "Submitting..."} %>
 

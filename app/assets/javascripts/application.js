@@ -16,7 +16,7 @@
 //= require turbolinks
 //= require bootstrap/dropdown
 //= require bootstrap/alert
-//= require bootstrap
+//= require bootstrap-sprockets
 //= require cart-dropdown
 //= require add-reduce
 //= require_tree .
