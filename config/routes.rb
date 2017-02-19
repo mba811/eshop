@@ -10,6 +10,15 @@ Rails.application.routes.draw do
         post :notsale
       end
     end
+
+    resources :banners do
+      member do
+        post :hide
+        post :publish
+        post :do_slide
+        post :undo_slide
+      end
+    end
   end
 
   resources :products do
