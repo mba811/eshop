@@ -15,7 +15,7 @@ class Admin::BannersController < ApplicationController
     @banner = Banner.new(banner_params)
 
     if @banner.save
-      redirect_to admin_banners_path, :notice => "Banner Created."
+      redirect_to admin_banners_path, notice: "Banner Created."
     else
       render :new
     end

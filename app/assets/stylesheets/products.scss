@@ -7,6 +7,11 @@
   padding: 0;
 }
 
+// for carousel
+.carousel-inner>.item>img, .carousel-inner>.item>a>img {
+width: 100%; 
+}
+
 // body { padding-top: 53px; }
 
 div {
@@ -424,10 +429,6 @@ a.category-link span {
 .block-contact {
     float: right;
     padding: 0 20px;
-    background-image: url(../images/light-dot-bkg-vert.png);
-    background-size: 7px;
-    background-repeat: repeat-y;
-    background-position: left;
     min-height: 230px;
     padding-left: 40px;
 }

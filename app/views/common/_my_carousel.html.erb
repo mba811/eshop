@@ -1,0 +1,35 @@
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <% @slides.each_with_index do |slide, i| %>
+	  <li data-target="#myCarousel" data-slide-to="<%= i %>" <% if i == 0 %>class="active"<% end %>></li>
+    <% end %>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <% @slides.each_with_index do |slide, i| %>
+		<div class="item <% if i == 0 %>active<% end %>">
+			<%= link_to image_tag(slide.cover.url, size: "710x472"),
+				slide.link,
+				:target => "_blank" %>
+        <div class="carousel-caption">
+          <h3><%= slide.title %></h3>
+          <p><%= slide.description %></p>
+        </div>
+      </div>
+    <% end %>
+
+
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left " aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
