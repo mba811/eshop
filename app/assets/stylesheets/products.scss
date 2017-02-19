@@ -9,7 +9,7 @@
 
 // for carousel
 .carousel-inner>.item>img, .carousel-inner>.item>a>img {
-width: 100%; 
+width: 100%;
 }
 
 // body { padding-top: 53px; }
@@ -169,7 +169,7 @@ div {
 }
 
 .header-banner .header-banner-right-2 {
-  padding-top: 15px;
+  padding-top: 25px;
 }
 
 // <=== index banner
@@ -186,7 +186,7 @@ div {
     padding: 0 5px 15px 0;
 }
 
-.featured-title a h1 {
+.featured-title h1 {
     color: #afa69d;
     text-align: center;
     font-size: 27.5px;
@@ -198,15 +198,15 @@ div {
     font-family: 'Montserrat', sans-serif;
 }
 
+.featured-title h1 span {
+    background-color: #f7f6f5;
+    padding: 0 20px;
+}
+
 .featured-title a:hover {
     color: #afa69d;
     text-decoration: none;
   }
-
-.featured-title a h1 span {
-    background-color: #f7f6f5;
-    padding: 0 20px;
-}
 
 a.category-link {
     float: right;

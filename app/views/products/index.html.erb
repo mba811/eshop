@@ -6,8 +6,12 @@
       </div>
 
       <div class="col-md-4">
-        <a href="http://www.snugglebugz.ca/brand/a-b/applecheeks.html?dir=asc&amp;order=position&amp;utm_source=SM%20Feb7-2017&amp;utm_campaign=AC%20You%20Rock&amp;utm_medium=SM%20Feb7-2017"> <img alt="" src="https://www.snugglebugz.ca/media/wysiwyg/HP_AppleCheeks_YouRock_1.jpg"> </a>
-        <a href="http://www.snugglebugz.ca/brand/j-k-l/kidco.html?dir=asc&amp;order=position&amp;utm_source=SM%202%20Feb15-2017&amp;utm_campaign=Kidco%20Safety&amp;utm_medium=SM%202%20Feb15-2017"> <img class="header-banner-right-2" alt="" src="https://www.snugglebugz.ca/media/wysiwyg/HP_Sm_KidcoSafety_1.jpg"> </a>
+		  <%= link_to(image_tag(@banners[0].cover.medium.url),
+								@banners[0].link,
+								:target => "_blank") %>
+		  <%= link_to(image_tag(@banners[1].cover.medium.url, class: "header-banner-right-2"),
+								@banners[1].link,
+								:target => "_blank") %>
       </div>
     </div>
   </div>
@@ -17,7 +21,7 @@
   <div class="container">
     <div class="row featured-title">
       <div class="col-md-12">
-        <a href="#"><h1><span>精选商品</span></h1></a>
+        <h1><span>热销精品</span></h1>
         <a href="#" class="category-link"><span>查看全部 &gt;</span></a>
       </div>
     </div>
@@ -116,7 +120,7 @@
   <div class="container">
     <div class="row featured-title">
       <div class="col-md-12">
-        <a href="#"><h1><span>精选商品</span></h1></a>
+        <h1><span>新品到货</span></h1>
         <a href="#" class="category-link"><span>查看全部 &gt;</span></a>
       </div>
     </div>
