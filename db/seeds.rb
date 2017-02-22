@@ -45,3 +45,42 @@ create_products = for i in 1..30 do
 end
 
 puts "30 Product created."
+
+
+
+puts "Seeding......"
+
+categories = {
+   "儿童图书" => ["0-2岁", "3-6岁", "7-10岁", "11-14岁", "儿童绘本", "家庭教育"],
+   "文学艺术" => ["小说", "文学", "动漫", "传记", "艺术"],
+   "人文社科" => ["历史", "国学", "哲学", "心理学"],
+   "经济管理" => ["投资理财", "管理", "经济与金融", "市场营销"],
+   "励志成功" => ["心灵读物", "人际交往", "职场", "成功学"],
+   "科学技术" => ["科普", "计算机与网络", "医学", "建筑"],
+   "健康生活" => ["烹饪与美食", "健康与养生", "旅游与地图"]
+ }
+
+
+# create_categories = for i in 1..30 do
+#   title_test = title_info[rand(0..4)]
+#   description_test = title_info[rand(0..4)]
+#   quantity_test = rand(8..25)
+#   price_test = prices_info[rand(0..4)]
+#
+# 	Product.create!([title: title_test, description: description_test, quantity: quantity_test,
+# 		price: price_test])
+# end
+
+categories.each do |main_category, sub_categories|
+  Category.create!([name: main_category, is_main_category: true])
+  @main_category = Category.where(:name => main_category).first
+
+  sub_categories.each do |sub_category|
+    Category.create!([name: sub_category, parent_category_id: @main_category.id])
+    @sub_category = Category.where(:name => sub_category).first
+    
+  end
+
+end
+
+puts "Done...."

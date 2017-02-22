@@ -2,13 +2,15 @@ class Admin::ProductsController < ApplicationController
   before_action :authenticate_user!, only: [:index, :show, :new, :create, :edit, :update, :destroy]
   before_action :require_is_admin
   layout "admin"
-  
+
 
   def index
     @products = Product.all.order("created_at DESC")
   end
 
   def new
+    @main_categories = Category.main_categories
+    @subcategories = Category.where(:parent_category_id => @main_categories.first.id)
     @product = Product.new
   end
 
@@ -24,6 +26,9 @@ class Admin::ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+
+    @main_categories = Category.main_categories
+    @subcategories = Category.where(:parent_category_id => @main_categories.first.id)
   end
 
   def update
@@ -59,8 +64,8 @@ class Admin::ProductsController < ApplicationController
 
 
   private
-    
+
     def product_params
-      params.require(:product).permit(:title, :description, :price, :quantity, :photo, :onsale)
+      params.require(:product).permit(:title, :description, :price, :quantity, :photo, :onsale, :category_id)
     end
 end

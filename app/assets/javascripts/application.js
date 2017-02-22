@@ -20,3 +20,5 @@
 //= require cart-dropdown
 //= require add-reduce
 //= require_tree .
+
+$('#sub_categories').html("<%= j collection_select(:post, :category_id, @subcategories, :id, :title), { prompt: 'Select subcategory...' }, { disabled: false } %>");

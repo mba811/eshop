@@ -20,7 +20,11 @@ Rails.application.routes.draw do
       end
     end
 
-    resources :categories
+    resources :categories do
+      member do
+        get :get_subcategories, defaults: { format: "js" }
+      end
+    end
   end  # namespace admin end
 
   resources :banners
@@ -49,8 +53,9 @@ Rails.application.routes.draw do
     resources :orders
   end
 
-  resources :cate
-  resources :brands
+
+  #resources :brands
+  resources :categories
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

@@ -3,6 +3,9 @@ class Admin::CategoriesController < ApplicationController
   before_action :require_is_admin
   layout "admin"
 
+  protect_from_forgery except: :get_subcategories
+
+
   def index
     @categories = Category.all
   end
@@ -13,7 +16,7 @@ class Admin::CategoriesController < ApplicationController
 
   def create
     @category = Category.new(category_params)
-    @parent_categories = Category.where(:is_main_category => true)
+    # @parent_categories = Category.main_categories
 
     if @category.save
       redirect_to admin_categories_path, :notice => "Category Created"
@@ -44,14 +47,18 @@ class Admin::CategoriesController < ApplicationController
   end
 
 
+  def get_subcategories
+    @subcategories = Category.where(:parent_category_id => params[:id])
+    respond_to do |format|
+      format.js
+    end
+  end
+
+
   private
 
     def category_params
       params.require(:category).permit(:name, :is_main_category, :parent_category_id)
     end
-
-
-
-
 
 end
