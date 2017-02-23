@@ -48,7 +48,7 @@
 
 
 
-puts "Seeding......"
+# puts "Seeding......"
 #
 # categories = {
 #    "儿童图书" => ["0-2岁", "3-6岁", "7-10岁", "11-14岁", "儿童绘本", "家庭教育"],
@@ -71,17 +71,94 @@ puts "Seeding......"
 # 		price: price_test])
 # end
 
-categories.each do |main_category, sub_categories|
-  Category.create!([name: main_category, is_main_category: true])
-  @main_category = Category.where(:name => main_category).first
+# categories.each do |main_category, sub_categories|
+#   Category.create!([name: main_category, is_main_category: true])
+#   @main_category = Category.where(:name => main_category).first
+#
+#   sub_categories.each do |sub_category|
+#     Category.create!([name: sub_category, parent_category_id: @main_category.id])
+#     @sub_category = Category.where(:name => sub_category).first
+#
+#
+#   end
+#
+# end
+#
+# puts "Done...."
 
-  sub_categories.each do |sub_category|
-    Category.create!([name: sub_category, parent_category_id: @main_category.id])
-    @sub_category = Category.where(:name => sub_category).first
+
+# ..............................
+#   1. get books json
+# ..............................
+#
+# Note:
+# 1. get books josn 2. get books categories 3. add book categories
+# 1. get books josn 4. add books
+
+require 'json'
+require 'set'
+
+img_folder = "#{Dir.home}/book-store"
+
+file = "#{img_folder}/z-books-3.txt"
+content = File.read(file)
+content_json = JSON.parse(content)
 
 
-  end
+# ..............................
+#   2. get Book Categories
+# ..............................
+
+# categories = {}
+# content_json.each do |item|
+#
+#   main_category = item["main_category"]
+#   sub_category = item["sub_category"]
+#
+#   sub_categories = categories[main_category]
+#   if !sub_categories
+#     sub_categories = Set.new
+#     sub_categories << sub_category
+#   else
+#     sub_categories << sub_category
+#   end
+#
+#   categories[main_category] = sub_categories
+#
+# end
+
+
+# ..............................
+#   3. Add Book Categories
+# ..............................
+
+# puts "Seeding......"
+# categories.each do |main_category, sub_categories|
+#   Category.create!([name: main_category, is_main_category: true])
+#   @main_category = Category.where(:name => main_category).first
+#
+#   sub_categories.each do |sub_category|
+#     Category.create!([name: sub_category, parent_category_id: @main_category.id])
+#     @sub_category = Category.where(:name => sub_category).first
+#   end
+# end
+#
+# puts "Categories Added Done...."
+
+
+# ..............................
+#   4. Add Books
+# ..............................
+
+content_json.each do |item|
 
 end
 
-puts "Done...."
+
+
+# puts item["img_src"], item["title"], item["book_id"]
+
+# img_suffix = item["img_src"].split('.')[-1]
+# puts img_suffix
+# img_path = "#{img_folder}/#{item["book_id"]}.#{img_suffix}"
+# puts img_path
