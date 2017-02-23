@@ -1,5 +1,6 @@
 <%= simple_form_for [:admin, @product] do |f| %>
 	<div class="group"><%= f.input :title, placeholder: "请输入产品标题" %></div>
+	<div class="group"><%= f.input :author, placeholder: "请输入产品作者" %></div>
 	<div class="group"><%= f.input :description, placeholder: "请输入产品描述" %></div>
 	<div class="group"><%= f.input :quantity, placeholder: "请输入产品数量" %></div>
 	<div class="group"><%= f.input :price, placeholder: "请输入产品价格" %></div>
