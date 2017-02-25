@@ -1,0 +1,58 @@
+<h2>Banner List</h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增 Banner", new_admin_banner_path, class: "btn btn-primary btn-sm" ) %>
+</div>
+<div style="clear:both; font-size: 0.8em; color: #666;">
+	<p>设为幻灯片：为首页轮播广告 Banner</p>
+	<p>取消幻灯片：为首页轮播广告右侧两副小的 Banner</p>
+	<p>隐藏与发布：设置是否在首页显示</p>
+</div>
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th width="70">#</th>
+			<th width="150">Cover Img</th>
+			<th>Title</th>
+			<th>Description</th>
+			<th width="250">Options</th>
+		</tr>
+	</thead>
+
+	<tbody>
+	  <% @banners.each do |banner| %>
+		<tr>
+			<td>
+				<%= banner.id %>
+				<%= render_banner_is_hidden(banner) %>
+				<%= render_banner_is_slide(banner) %>
+			</td>
+			<td>
+				<%= link_to admin_banner_path(banner) do %>
+				  <% if banner.cover.present? %>
+					  <%= image_tag(banner.cover.thumb.url, class: "thumbnail") %>
+				  <% else %>
+					  <%= image_tag("no-pic.png", class: "thumbnail") %>
+				  <% end %>
+				<% end %>
+			</td>
+			<td><%= banner.title %></td>
+			<td><%= banner.description %></td>
+			<td>
+				<%= link_to("Edit", edit_admin_banner_path(banner), class: "btn btn-primary btn-xs") %>
+				<%= link_to("Delete", admin_banner_path(banner), method: :delete, class: "btn btn-danger btn-xs", data: {confirm: "确定要删除该 Banner 吗？\n#{banner.title}" }) %>
+			  <% if !banner.is_hidden %>
+				<%= link_to("隐藏", hide_admin_banner_path(banner), method: :post, class: "btn btn-info btn-xs") %>
+			  <% else %>
+				<%= link_to("发布", publish_admin_banner_path(banner), method: :post, class: "btn btn-info btn-xs")  %>
+			  <% end %>
+			  <% if !banner.is_slide %>
+				<%= link_to("设为幻灯片", do_slide_admin_banner_path(banner), method: :post, class: "btn btn-warning btn-xs") %>
+			  <% else %>
+				<%= link_to("取消幻灯片", undo_slide_admin_banner_path(banner), method: :post, class: "btn btn-warning btn-xs")  %>
+			  <% end %>
+			</td>
+		</tr>
+	  <% end %>
+	</tbody>
+</table>

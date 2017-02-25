@@ -1,0 +1,40 @@
+<div class="wrapper product-wrap">
+  <div class="container">
+
+    <div class="row">
+			<div class="col-md-12">
+        <ol class="breadcrumb breadcrumb-jd">
+          <li><a href="/">Home</a></li>
+          <li><strong>产品类别</strong></li>
+        </ol>
+			</div>
+		</div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="page-title category-title">
+          <h1>Shop by Category</h1>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <% @main_categories.each do |main_category| %>
+          <div class="list-group category-list">
+            <li class="list-group-item list-group-item-info"><%= main_category.name %></li>
+            <!-- <% if main_category %> -->
+              <% main_category.children_categories.each do |sub_category| %>
+                <%= link_to( sub_category.name, category_path(sub_category),
+                            :class => "list-group-item" ) %>
+              <% end %>
+            <!-- <% end %> -->
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+
+
+  </div>
+</div>

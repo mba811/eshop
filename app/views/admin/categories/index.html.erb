@@ -1,0 +1,36 @@
+<h2>Category List</h2>
+<div class="pull-right" style="padding-bottom: 20px;">
+  <%= link_to("新增 Category", new_admin_category_path, class: "btn btn-primary btn-sm" ) %>
+</div>
+
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th width="70">#</th>
+			<th width="150">分类名称</th>
+			<th>是主分类</th>
+			<th>所属分类名称</th>
+			<th width="250">Options</th>
+		</tr>
+	</thead>
+
+	<tbody>
+	  <% @categories.each do |category| %>
+		<tr>
+			<td>
+				<%= category.id %>
+			</td>
+			<td>
+				<%= category.name %>
+			</td>
+			<td><%= render_is_main_category(category) %></td>
+			<td><%= category.parent_category_name %></td>
+			<td>
+				<%= link_to("Edit", edit_admin_category_path(category), class: "btn btn-primary btn-xs") %>
+				<%= link_to("Delete", admin_category_path(category), method: :delete, class: "btn btn-danger btn-xs", data: {confirm: "确定要删除该 Category 吗？\n#{category.name}" }) %>
+			</td>
+		</tr>
+	  <% end %>
+	</tbody>
+</table>

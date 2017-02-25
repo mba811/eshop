@@ -1,0 +1,63 @@
+<div class="wrapper product-wrap">
+  <div class="container">
+
+    <div class="row">
+			<div class="col-md-12">
+        <ol class="breadcrumb breadcrumb-jd">
+          <li><a href="/">Home</a></li>
+          <li><strong>New Arrived</strong></li>
+        </ol>
+			</div>
+		</div>
+
+    <div class="row">
+      <div class="col-md-12"></div>
+
+        <div class="col-md-2">
+          <%= render "common/left_nav" %>
+  			</div>
+
+  			<div class="col-md-10">
+          <div class="row">
+
+            <% @products.each do |product| %>
+            <div class="col-xs-6 col-md-3">
+              <div class="thumbnail category-product">
+
+                <%= link_to product_path(product) do %>
+                  <% if product.photos.present? %>
+                    <%= image_tag(product.photos[0].avatar.big_thumb.url) %>
+                  <% else %>
+                    <% image_tag("no-pic.png") %>
+                  <% end %>
+                <% end %>
+                <div class="product-info">
+                  <div class="cation">
+                    <%= link_to product_path(product) do %>
+                      <h3 class="product-name"><%= product.title %></h3>
+                    <% end %>
+                  </div>
+                    <div class="product-price-wrap">
+                      <div class="product-price">
+                        <i>¥</i><%= product.price %>
+                      </div>
+                      <div class="product-add-cart">
+                        <%= link_to add_to_cart_product_path(product), method: :post do %>
+                          <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+                        <% end %>
+                      </div>
+                    </div>
+
+                </div>
+              </div>
+            </div>
+            <% end %>
+
+          </div>
+      </div>  <!-- col-md-10 end -->
+
+    </div>     <!-- row end -->
+
+
+  </div>
+</div>

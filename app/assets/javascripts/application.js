@@ -12,7 +12,13 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require turbolinks
-//= require bootstrap/dropdown 
+//= require bootstrap/dropdown
 //= require bootstrap/alert
+//= require bootstrap-sprockets
+//= require cart-dropdown
+//= require add-reduce
 //= require_tree .
+
+$('#sub_categories').html("<%= j collection_select(:post, :category_id, @subcategories, :id, :title), { prompt: 'Select subcategory...' }, { disabled: false } %>");

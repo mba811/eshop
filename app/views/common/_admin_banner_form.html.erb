@@ -1,0 +1,16 @@
+<%= simple_form_for [:admin, @banner] do |f| %>
+	<div class="group"><%= f.input :title %></div>
+	<div class="group"><%= f.input :description %></div>
+	<div class="group"><%= f.input :link %></div>
+	<div class="group"><%= f.input :is_slide %></div>
+	<% if @banner.cover.present? %>
+		<span>目前 Banner 图片</span><br>
+		<%= image_tag(@banner.cover.thumb.url, class: "thumbnail") %>
+    <% end %>
+
+	<div class="group"><%= f.input :cover, as: :file %></div>
+	<div class="group"><%= f.input :is_hidden %></div>
+
+	<%= f.submit "Submit", data: {disable_with: "Submitting..."} %>
+
+<% end %>

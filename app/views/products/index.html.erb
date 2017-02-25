@@ -1,0 +1,118 @@
+<div class="wrapper header-banner">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <%= render "common/my_carousel" %>
+      </div>
+
+      <div class="col-md-4">
+		  <%= link_to(image_tag(@banners[0].cover.medium.url),
+								@banners[0].link,
+								:target => "_blank") %>
+		  <%= link_to(image_tag(@banners[1].cover.medium.url, class: "header-banner-right-2"),
+								@banners[1].link,
+								:target => "_blank") %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="wrapper featured">
+  <div class="container">
+
+    <div class="row featured-title">
+      <div class="col-md-12">
+        <h1><span>儿童绘本</span></h1>
+		<%= link_to "categories/60", class: "category-link" do %>
+		  <span>查看全部 &gt;</span>
+		<% end %>
+      </div>
+    </div>
+
+    <div class="row products-container">
+      <% @picture_books.each do |picture_book|%>
+      <div class="col-xs-6 col-md-2">
+        <div class="thumbnail category-product">
+
+          <%= link_to product_path(picture_book) do %>
+            <% if picture_book.photos.present? %>
+              <%= image_tag(picture_book.photos[0].avatar.big_thumb.url) %>
+            <% else %>
+              <% image_tag("no-pic.png") %>
+            <% end %>
+          <% end %>
+          <div class="product-info">
+            <div class="cation">
+              <%= link_to product_path(picture_book) do %>
+                <h3 class="product-name"><%= picture_book.title %></h3>
+              <% end %>
+            </div>
+              <div class="product-price-wrap">
+                <div class="product-price">
+                  <i>¥</i><%= picture_book.price %>
+                </div>
+                <div class="product-add-cart">
+                  <%= link_to add_to_cart_product_path(picture_book), method: :post do %>
+                    <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+                  <% end %>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
+
+<div class="wrapper featured">
+  <div class="container">
+
+    <div class="row featured-title">
+      <div class="col-md-12">
+        <h1><span>新品上市</span></h1>
+		<%= link_to new_arrived_products_path, class: "category-link" do %>
+		  <span>查看全部 &gt;</span>
+		<% end %>
+      </div>
+    </div>
+
+    <div class="row products-container">
+      <% @new_arrives.each do |new_arrive|%>
+      <div class="col-xs-6 col-md-2">
+        <div class="thumbnail category-product">
+
+          <%= link_to product_path(new_arrive) do %>
+            <% if new_arrive.photos.present? %>
+              <%= image_tag(new_arrive.photos[0].avatar.big_thumb.url) %>
+            <% else %>
+              <% image_tag("no-pic.png") %>
+            <% end %>
+          <% end %>
+          <div class="product-info">
+            <div class="cation">
+              <%= link_to product_path(new_arrive) do %>
+                <h3 class="product-name"><%= new_arrive.title %></h3>
+              <% end %>
+            </div>
+              <div class="product-price-wrap">
+                <div class="product-price">
+                  <i>¥</i><%= new_arrive.price %>
+                </div>
+                <div class="product-add-cart">
+                  <%= link_to add_to_cart_product_path(new_arrive), method: :post do %>
+                    <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+                  <% end %>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
