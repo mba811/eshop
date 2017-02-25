@@ -19,199 +19,100 @@
 
 <div class="wrapper featured">
   <div class="container">
+
     <div class="row featured-title">
       <div class="col-md-12">
-        <h1><span>热销精品</span></h1>
-        <a href="#" class="category-link"><span>查看全部 &gt;</span></a>
+        <h1><span>儿童绘本</span></h1>
+		<%= link_to "categories/60", class: "category-link" do %>
+		  <span>查看全部 &gt;</span>
+		<% end %>
       </div>
     </div>
 
     <div class="row products-container">
-      <div class="col-md-3">
-        <div class="product-box">
-          <div class="product-img-box">
-            <a href="http://www.snugglebugz.ca/wall-mount-angle-gate-white.html" title="Wall Mount Angle Gate White">
-              <img src="https://www.snugglebugz.ca/media/catalog/product/cache/1/small_image/225x225/9df78eab33525d08d6e5fb8d27136e95/k/c/kc-g2100wall_mount_angle_gate_-_white_product_zoom.jpg" width="225" height="225" alt="Wall Mount Angle Gate White" title="Wall Mount Angle Gate White">
-            </a>
-          </div>
-          <div class="product-title-box">
-            <h2 class="product-title">
-              Wall Mount Angle Gate White White White White White White White
-              <span class="brand">By Kidco</span>
-            </h2>
-          </div>
-          <div class="rating-box">
-            <div class="rating" style="width: 96%"></div>
-          </div>
-          <div class="price-box">
-            <span class="price">¥ 129.99</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="product-box">
-          <div class="product-img-box">
-            <a href="http://www.snugglebugz.ca/wall-mount-angle-gate-white.html" title="Wall Mount Angle Gate White">
-              <img src="https://www.snugglebugz.ca/media/catalog/product/cache/1/small_image/225x225/9df78eab33525d08d6e5fb8d27136e95/k/c/kc-g2100wall_mount_angle_gate_-_white_product_zoom.jpg" width="225" height="225" alt="Wall Mount Angle Gate White" title="Wall Mount Angle Gate White">
-            </a>
-          </div>
-          <div class="product-title-box">
-            <h2 class="product-title">
-              Wall Mount Angle Gate White White White White White White White
-              <span class="brand">By Kidco</span>
-            </h2>
-          </div>
-          <div class="rating-box">
-            <div class="rating" style="width: 96%"></div>
-          </div>
-          <div class="price-box">
-            <span class="price">¥ 129.99</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="product-box">
-          <div class="product-img-box">
-            <a href="http://www.snugglebugz.ca/wall-mount-angle-gate-white.html" title="Wall Mount Angle Gate White">
-              <img src="https://www.snugglebugz.ca/media/catalog/product/cache/1/small_image/225x225/9df78eab33525d08d6e5fb8d27136e95/k/c/kc-g2100wall_mount_angle_gate_-_white_product_zoom.jpg" width="225" height="225" alt="Wall Mount Angle Gate White" title="Wall Mount Angle Gate White">
-            </a>
-          </div>
-          <div class="product-title-box">
-            <h2 class="product-title">
-              Wall Mount Angle Gate White White White White White White White
-              <span class="brand">By Kidco</span>
-            </h2>
-          </div>
-          <div class="rating-box">
-            <div class="rating" style="width: 96%"></div>
-          </div>
-          <div class="price-box">
-            <span class="price">¥ 129.99</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="product-box">
-          <div class="product-img-box">
-            <a href="http://www.snugglebugz.ca/wall-mount-angle-gate-white.html" title="Wall Mount Angle Gate White">
-              <img src="https://www.snugglebugz.ca/media/catalog/product/cache/1/small_image/225x225/9df78eab33525d08d6e5fb8d27136e95/k/c/kc-g2100wall_mount_angle_gate_-_white_product_zoom.jpg" width="225" height="225" alt="Wall Mount Angle Gate White" title="Wall Mount Angle Gate White">
-            </a>
-          </div>
-          <div class="product-title-box">
-            <h2 class="product-title">
-              Wall Mount Angle Gate White White White White White White White
-              <span class="brand">By Kidco</span>
-            </h2>
-          </div>
-          <div class="rating-box">
-            <div class="rating" style="width: 96%"></div>
-          </div>
-          <div class="price-box">
-            <span class="price">¥ 129.99</span>
-          </div>
-        </div>
-      </div>
+      <% @picture_books.each do |picture_book|%>
+      <div class="col-xs-6 col-md-2">
+        <div class="thumbnail category-product">
 
+          <%= link_to product_path(picture_book) do %>
+            <% if picture_book.photos.present? %>
+              <%= image_tag(picture_book.photos[0].avatar.big_thumb.url) %>
+            <% else %>
+              <% image_tag("no-pic.png") %>
+            <% end %>
+          <% end %>
+          <div class="product-info">
+            <div class="cation">
+              <%= link_to product_path(picture_book) do %>
+                <h3 class="product-name"><%= picture_book.title %></h3>
+              <% end %>
+            </div>
+              <div class="product-price-wrap">
+                <div class="product-price">
+                  <i>¥</i><%= picture_book.price %>
+                </div>
+                <div class="product-add-cart">
+                  <%= link_to add_to_cart_product_path(picture_book), method: :post do %>
+                    <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+                  <% end %>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+      <% end %>
     </div>
+
   </div>
 </div>
 
 <div class="wrapper featured">
   <div class="container">
+
     <div class="row featured-title">
       <div class="col-md-12">
-        <h1><span>新品到货</span></h1>
-        <a href="#" class="category-link"><span>查看全部 &gt;</span></a>
+        <h1><span>新品上市</span></h1>
+		<%= link_to new_arrived_products_path, class: "category-link" do %>
+		  <span>查看全部 &gt;</span>
+		<% end %>
       </div>
     </div>
 
     <div class="row products-container">
-      <div class="col-md-3">
-        <div class="product-box">
-          <div class="product-img-box">
-            <a href="http://www.snugglebugz.ca/wall-mount-angle-gate-white.html" title="Wall Mount Angle Gate White">
-              <img src="https://www.snugglebugz.ca/media/catalog/product/cache/1/small_image/225x225/9df78eab33525d08d6e5fb8d27136e95/k/c/kc-g2100wall_mount_angle_gate_-_white_product_zoom.jpg" width="225" height="225" alt="Wall Mount Angle Gate White" title="Wall Mount Angle Gate White">
-            </a>
-          </div>
-          <div class="product-title-box">
-            <h2 class="product-title">
-              Wall Mount Angle Gate White White White White White White White
-              <span class="brand">By Kidco</span>
-            </h2>
-          </div>
-          <div class="rating-box">
-            <div class="rating" style="width: 96%"></div>
-          </div>
-          <div class="price-box">
-            <span class="price">¥ 129.99</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="product-box">
-          <div class="product-img-box">
-            <a href="http://www.snugglebugz.ca/wall-mount-angle-gate-white.html" title="Wall Mount Angle Gate White">
-              <img src="https://www.snugglebugz.ca/media/catalog/product/cache/1/small_image/225x225/9df78eab33525d08d6e5fb8d27136e95/k/c/kc-g2100wall_mount_angle_gate_-_white_product_zoom.jpg" width="225" height="225" alt="Wall Mount Angle Gate White" title="Wall Mount Angle Gate White">
-            </a>
-          </div>
-          <div class="product-title-box">
-            <h2 class="product-title">
-              Wall Mount Angle Gate White White White White White White White
-              <span class="brand">By Kidco</span>
-            </h2>
-          </div>
-          <div class="rating-box">
-            <div class="rating" style="width: 96%"></div>
-          </div>
-          <div class="price-box">
-            <span class="price">¥ 129.99</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="product-box">
-          <div class="product-img-box">
-            <a href="http://www.snugglebugz.ca/wall-mount-angle-gate-white.html" title="Wall Mount Angle Gate White">
-              <img src="https://www.snugglebugz.ca/media/catalog/product/cache/1/small_image/225x225/9df78eab33525d08d6e5fb8d27136e95/k/c/kc-g2100wall_mount_angle_gate_-_white_product_zoom.jpg" width="225" height="225" alt="Wall Mount Angle Gate White" title="Wall Mount Angle Gate White">
-            </a>
-          </div>
-          <div class="product-title-box">
-            <h2 class="product-title">
-              Wall Mount Angle Gate White White White White White White White
-              <span class="brand">By Kidco</span>
-            </h2>
-          </div>
-          <div class="rating-box">
-            <div class="rating" style="width: 96%"></div>
-          </div>
-          <div class="price-box">
-            <span class="price">¥ 129.99</span>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3">
-        <div class="product-box">
-          <div class="product-img-box">
-            <a href="http://www.snugglebugz.ca/wall-mount-angle-gate-white.html" title="Wall Mount Angle Gate White">
-              <img src="https://www.snugglebugz.ca/media/catalog/product/cache/1/small_image/225x225/9df78eab33525d08d6e5fb8d27136e95/k/c/kc-g2100wall_mount_angle_gate_-_white_product_zoom.jpg" width="225" height="225" alt="Wall Mount Angle Gate White" title="Wall Mount Angle Gate White">
-            </a>
-          </div>
-          <div class="product-title-box">
-            <h2 class="product-title">
-              Wall Mount Angle Gate White White White White White White White
-              <span class="brand">By Kidco</span>
-            </h2>
-          </div>
-          <div class="rating-box">
-            <div class="rating" style="width: 96%"></div>
-          </div>
-          <div class="price-box">
-            <span class="price">¥ 129.99</span>
-          </div>
-        </div>
-      </div>
+      <% @new_arrives.each do |new_arrive|%>
+      <div class="col-xs-6 col-md-2">
+        <div class="thumbnail category-product">
 
+          <%= link_to product_path(new_arrive) do %>
+            <% if new_arrive.photos.present? %>
+              <%= image_tag(new_arrive.photos[0].avatar.big_thumb.url) %>
+            <% else %>
+              <% image_tag("no-pic.png") %>
+            <% end %>
+          <% end %>
+          <div class="product-info">
+            <div class="cation">
+              <%= link_to product_path(new_arrive) do %>
+                <h3 class="product-name"><%= new_arrive.title %></h3>
+              <% end %>
+            </div>
+              <div class="product-price-wrap">
+                <div class="product-price">
+                  <i>¥</i><%= new_arrive.price %>
+                </div>
+                <div class="product-add-cart">
+                  <%= link_to add_to_cart_product_path(new_arrive), method: :post do %>
+                    <i class="fa fa-shopping-cart fa-2x" aria-hidden="true"></i>
+                  <% end %>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+      <% end %>
     </div>
+
   </div>
 </div>
-

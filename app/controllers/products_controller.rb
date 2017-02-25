@@ -3,11 +3,13 @@ class ProductsController < ApplicationController
   # before_action :set_search
 
   def index
-    @products = Product.all.paginate(:page => params[:page], :per_page => 12)
+    @products = Product.where("onsale = ?", true).paginate(:page => params[:page], :per_page => 12)
     @slides = Banner.where("is_hidden = ? AND is_slide = ?", false, true )
     @banners = Banner.where("is_hidden = ? AND is_slide = ?", false, false ).order("created_at
                            DESC").limit(2)
     # @q = Product.ransack(params[:q])
+    @picture_books = Product.where("onsale = ? AND category_id = ?", true, 60).order("created_at DESC").limit(6)
+    @new_arrives = Product.where("onsale = ?", true).order("created_at DESC").limit(6)
   end
 
   def show
