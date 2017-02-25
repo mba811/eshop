@@ -5,7 +5,7 @@ class ProductsController < ApplicationController
   def index
     @products = Product.all.paginate(:page => params[:page], :per_page => 12)
     @slides = Banner.where("is_hidden = ? AND is_slide = ?", false, true )
-    @banners = Banner.where("is_hidden = ? AND is_slide = ?", false, false ).order("created_at 
+    @banners = Banner.where("is_hidden = ? AND is_slide = ?", false, false ).order("created_at
                            DESC").limit(2)
     # @q = Product.ransack(params[:q])
   end
@@ -31,6 +31,10 @@ class ProductsController < ApplicationController
     # @q = Product.ransack(params[:q])
     # @products = @q.result(distinct: true).paginate(:page => params[:page], :per_page => 12)
 
+  end
+
+  def new_arrived
+    @products = Product.where("onsale = ?", true).order("created_at DESC").limit(20)
   end
 
 

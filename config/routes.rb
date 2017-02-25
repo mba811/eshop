@@ -38,6 +38,7 @@ Rails.application.routes.draw do
 
     collection do
       get :search
+      get :new_arrived
     end
   end
 

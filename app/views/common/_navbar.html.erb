@@ -6,9 +6,15 @@
 			</div>
 			<div class="col-md-8 col-xs-12">
 				<ul>
-					<li><i class="fa fa-user-circle-o h_i"></i><a href="#">免费注册</a></li>
-					<li><i class="fa fa-shopping-bag h_i"></i><a href="#">我的订单</a></li>
-					<li><i class="fa fa-star h_i"></i><a href="#">精选分类</a></li>
+					<li><i class="fa fa-user-circle-o h_i"></i>
+						<%= link_to "免费注册", new_user_registration_path %>
+					</li>
+					<li><i class="fa fa-shopping-bag h_i"></i>
+						<%= link_to "我的订单", account_orders_path %>
+					</li>
+					<li><i class="fa fa-star h_i"></i>
+						<%= link_to "精选分类", categories_path %>
+					</li>
 					<li><i class="fa fa-gift h_i"></i><a href="#">最新产品</a></li>
 					<li><i class="fa fa-check-circle h_i"></i><a href="#">关于我们</a></li>
 					<li><i class="fa fa-phone h_i"></i><a href="#">客户服务</a></li>
@@ -73,11 +79,21 @@
 			<div class="col-md-2 col-xs-4 nav-1">
 				<%= link_to("产品类别", categories_path) %>
 			</div>
-			<div class="col-md-2 col-xs-4 nav-2"><a href="#">产品品牌</a></div>
-			<div class="col-md-2 col-xs-4 nav-3"><a href="#">新品上市</a></div>
-			<div class="col-md-2 col-xs-4"><a href="#">优品特惠</a></div>
-			<div class="col-md-2 col-xs-4"><a href="#">热销精品</a></div>
-			<div class="col-md-2 col-xs-4"><a href="#">今日特价</a></div>
+			<div class="col-md-2 col-xs-4 nav-2">
+				<%= link_to("产品品牌", categories_path) %>
+			</div>
+			<div class="col-md-2 col-xs-4 nav-3">
+				<%= link_to("新品上市", new_arrived_products_path) %>
+			</div>
+			<div class="col-md-2 col-xs-4">
+				<%= link_to("优品特惠", categories_path) %>
+			</div>
+			<div class="col-md-2 col-xs-4">
+				<%= link_to("热销精品", categories_path) %>
+			</div>
+			<div class="col-md-2 col-xs-4">
+				<%= link_to("今日特价", categories_path) %>
+			</div>
 		</div>
 	</div>
 </div>
