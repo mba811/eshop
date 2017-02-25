@@ -26,13 +26,16 @@
 #
 # puts "this seed will create an admin account automatically, 10 public jobs, and 10 hidden jobs"
 #
-# create_account = User.create([email: "2@2.cn", password:"abcabc",password_confirmation: "abcabc",is_admin:"true"])
+
+puts "Seeding......"
+
+create_account = User.create([email: "2@2.cn", password:"abcabc",password_confirmation: "abcabc",is_admin:"true"])
 #
-# puts "Admin account created."
+puts "Admin account created."
 #
-# create_account_user = User.create([email: "1@1.com", password:"abcabc",password_confirmation: "abcabc",is_admin:"false"])
+create_account_user = User.create([email: "1@1.com", password:"abcabc",password_confirmation: "abcabc",is_admin:"false"])
 #
-# puts "User account created."
+puts "User account created."
 #
 # create_products = for i in 1..30 do
 # 	title_test = title_info[rand(0..4)]
@@ -85,7 +88,7 @@
 #
 # puts "Done...."
 
-puts "Seeding......"
+
 
 
 # ..............................
