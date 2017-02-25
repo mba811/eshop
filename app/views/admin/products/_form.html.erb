@@ -15,12 +15,25 @@
 									prompt: "请选择产品所属子类",
 									class: "sub_categories" %></div>
 
-	<% if @product.photo.present? %>
-		<span>目前商品图</span><br>
-		<%= image_tag(@product.photo.thumb.url, class: "thumbnail") %>
+	<div class="group">
+	<% if @product.photos.count > 1 %>
+		<%= f.label "目前商品图" %><br>
+	  <div class="avatar-thumbs">
+	    <% @product.photos.each do |pic, index| %>
+			<div class="avatar-thumb">
+				<%= image_tag pic.avatar.big_thumb.url %>
+				<%= link_to admin_product_photo_path(@product, pic), method: :delete, class: "delete" do %>
+					<i class="fa fa-trash delete red"></i>
+				<% end %>
+			</div>
+		  <% end %>
+	  </div>
     <% end %>
-
-	<div class="group"><%= f.input :photo, as: :file %></div>
+	</div>
+	<div class="group">
+	  <%= f.label :avatar %><br>
+	  <%= f.file_field :avatar, :multiple => true, name: "photos[avatar][]" %><br>
+	</div>
 	<div class="group"><%= f.input :onsale %></div>
 
 	<%= f.submit "Submit", data: {disable_with: "Submitting..."} %>

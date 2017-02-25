@@ -9,6 +9,7 @@ Rails.application.routes.draw do
         post :onsale
         post :notsale
       end
+      resources :photos, :only => [:destroy]
     end
 
     resources :banners do
@@ -25,6 +26,7 @@ Rails.application.routes.draw do
         get :get_subcategories, defaults: { format: "js" }
       end
     end
+
   end  # namespace admin end
 
   resources :banners

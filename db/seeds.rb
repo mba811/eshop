@@ -48,7 +48,6 @@
 
 
 
-# puts "Seeding......"
 #
 # categories = {
 #    "儿童图书" => ["0-2岁", "3-6岁", "7-10岁", "11-14岁", "儿童绘本", "家庭教育"],
@@ -86,6 +85,8 @@
 #
 # puts "Done...."
 
+puts "Seeding......"
+
 
 # ..............................
 #   1. get books json
@@ -98,7 +99,9 @@
 require 'json'
 require 'set'
 
-img_folder = "#{Dir.home}/book-store"
+
+img_folder = "#{Rails.root}/public/images/book-store"
+# puts img_folder
 
 file = "#{img_folder}/z-books-3.txt"
 content = File.read(file)
@@ -134,31 +137,66 @@ content_json = JSON.parse(content)
 
 # puts "Seeding......"
 # categories.each do |main_category, sub_categories|
+#   main_category = main_category.strip()
+#
 #   Category.create!([name: main_category, is_main_category: true])
 #   @main_category = Category.where(:name => main_category).first
 #
 #   sub_categories.each do |sub_category|
+#     sub_category = sub_category.strip()
+#
 #     Category.create!([name: sub_category, parent_category_id: @main_category.id])
 #     @sub_category = Category.where(:name => sub_category).first
 #   end
 # end
-#
+
 # puts "Categories Added Done...."
 
 
 # ..............................
 #   4. Add Books
 # ..............................
-
+#
 content_json.each do |item|
+  title = item["title"]
+  price = item["price"]
+  author = item["author"]
 
+  main_category = item["main_category"].strip()
+  @main_category = Category.where("name = ?", main_category).first
+  # puts "main_category.name: #{@main_category.name}"
+  # puts "main_category.id : #{@main_category.id}"
+
+  sub_category = item["sub_category"].strip()
+  # puts "sub_category: #{sub_category}"
+  @sub_category = Category.where(["name = ? AND parent_category_id = ? ",
+                                  sub_category, @main_category.id]).first
+
+
+  Product.create!([
+      :title => title,
+      :quantity => 500,
+      :price => price,
+      :author => author,
+      :onsale => true,
+      :category_id => @sub_category.id
+  ])
+  # puts "Start create product..."
+  puts "title: #{title}"
+
+  @product = Product.order(id: :desc).first
+
+  # puts "End create product #{@product.id}"
+
+  # puts "Start create Photo..."
+  img_gallery = item["img_gallery"]
+  for img_url in img_gallery
+    img_name = img_url.split('/')[-1]
+    img_path = "#{img_folder}/#{img_name}"
+    Photo.create!([:product_id => @product.id,
+                  :avatar => File.open(img_path)])
+    # puts "\t\t upload photo #{img_name}"
+  end
 end
 
-
-
-# puts item["img_src"], item["title"], item["book_id"]
-
-# img_suffix = item["img_src"].split('.')[-1]
-# puts img_suffix
-# img_path = "#{img_folder}/#{item["book_id"]}.#{img_suffix}"
-# puts img_path
+puts "Done..."

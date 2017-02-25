@@ -1,7 +1,9 @@
 class Product < ApplicationRecord
-  mount_uploader :photo, PhotoUploader
+  #mount_uploader :photo, PhotoUploader
   belongs_to :category
   belongs_to :brand
+  has_many :photos
+  accepts_nested_attributes_for :photos
 
   def onsale!
     self.onsale = true

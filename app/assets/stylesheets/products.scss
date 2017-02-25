@@ -101,7 +101,7 @@ div {
 	top: 10px;
 	z-index: 1001;
 	border: 0;
-	background: url(http://www.muji.com.cn/cn/store/contents/img/icon_search_b.png) no-repeat 10px center rgba(0,0,0,.05);
+	background: url("icon_search.png") no-repeat 10px center rgba(0,0,0,.05);
 	background-color: #f8f8f8;
 	background-size: 16px 17px;
   color: #000;
@@ -1046,3 +1046,84 @@ div.left_nav h3{
   padding: 0;
   color: #000;
 }
+
+
+
+
+.product-img-thumbs{
+  padding-top: 8px;
+}
+.product-img-thumbs a {
+    display: inline-block;
+    border: 1px solid transparent
+}
+
+.product-img-thumbs a:hover{
+    border-color: #c7c7c7;
+}
+
+
+// for admin products remove
+.avatar-thumbs{
+  overflow: auto;
+  height: 85px;
+  img{
+    width: 75px;
+    height: 75px;
+  }
+}
+
+div.avatar-thumb{
+  position: relative;
+  float: left;
+  margin-right: 10px;
+
+}
+
+div.avatar-thumb:hover i.delete{
+  display: block;
+}
+div.avatar-thumb i.delete{
+  position: absolute;
+  top:0;
+  right: 0;
+  display: none;
+}
+
+
+
+
+
+// .avatar-thumbs .image{
+//   position:relative;
+//   float: left;
+//   width: 80px;
+//   height: 80px;
+//   margin-right: 10px;
+//   border: 1px solid transperent;
+//   display: inline-block;
+//   img{
+//     width: 75px;
+//     height: 75px;
+//   }
+//
+//   a.delete, a.delete i{
+//     display:none;
+//     position:absolute;
+//     top:0;
+//     right:0;
+//     width:30px;
+//     height:30px;
+//     text-indent:-999px;
+//     // background-color: red;
+//     z-index: 999;
+//   }
+// }
+//
+// .avatar-thumbs .image:hover {
+//   border-color: #c7c7c7;
+//   a.delete, a.delte i{
+//     display: block;
+//     z-index: 999;
+//   }
+// }

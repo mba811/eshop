@@ -45,8 +45,8 @@
               <div class="thumbnail category-product">
 
                 <%= link_to product_path(product) do %>
-                  <% if product.photo.present? %>
-                    <%= image_tag(product.photo.thumb.url) %>
+                  <% if product.photos.present? %>
+                    <%= image_tag(product.photos[0].avatar.big_thumb.url) %>
                   <% else %>
                     <% image_tag("no-pic.png") %>
                   <% end %>
