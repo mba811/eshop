@@ -22,7 +22,7 @@
       <div class="col-md-12">
         <% @main_categories.each do |main_category| %>
           <div class="list-group category-list">
-            <li class="list-group-item list-group-item-info"><%= main_category.name %></li>
+            <li class="list-group-item list-group-item-info pink"><%= main_category.name %></li>
             <!-- <% if main_category %> -->
               <% main_category.children_categories.each do |sub_category| %>
                 <%= link_to( sub_category.name, category_path(sub_category),

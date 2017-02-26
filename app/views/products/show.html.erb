@@ -62,7 +62,7 @@
 			                <a class="btn-reduce" id="btn-reduce" name="btn-reduce" href="#none">-</a>
 			                <a class="btn-add" id="btn-add" name="add" href="#none">+</a>
 								</div>
-								<a href="#" class="btn btn-primary btn-lg btn-danger">加入购物车</a>
+								<%= link_to "加入购物车", add_to_cart_product_path(@product), method: :post, class: "btn btn-primary btn-lg btn-danger" %>
 							</div>
 						</div>
 
