@@ -42,7 +42,7 @@
 					<div class="product-shop">
 						<div class="product-name">
 						   <span class="h1"><%= @product.title %></span>
-						   <p class="category">类别： <a href="http://www.snugglebugz.ca/brand/a-b/bumkins.html">Bumkins</a></p>
+						   <p class="category">类别： <%= link_to(@category.name, category_path(@category)) %></p>
 						</div>
 						<div class="product-sku">
 								<span>&nbsp;</span>
