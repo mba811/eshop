@@ -24,24 +24,24 @@ puts "Seeding......"
 #
 
 
-img_folder = "#{Rails.root}/public/images/banners"
-
-slides = ["#{img_folder}/slide1.jpg", "#{img_folder}/slide2.jpg"]
-for slide in slides
-  Banner.create!([is_slide: true,
-                cover: File.open(slide),
-                is_hidden: false])
-end
-puts "Slide created..."
-
-
-banners = ["#{img_folder}/banner1.jpg", "#{img_folder}/banner2.jpg"]
-for banner in banners
-  Banner.create!([is_slide: false,
-                cover: File.open(banner),
-                is_hidden: false])
-end
-puts "Banners created..."
+# img_folder = "#{Rails.root}/public/images/banners"
+#
+# slides = ["#{img_folder}/slide1.jpg", "#{img_folder}/slide2.jpg"]
+# for slide in slides
+#   Banner.create!([is_slide: true,
+#                 cover: File.open(slide),
+#                 is_hidden: false])
+# end
+# puts "Slide created..."
+#
+#
+# banners = ["#{img_folder}/banner1.jpg", "#{img_folder}/banner2.jpg"]
+# for banner in banners
+#   Banner.create!([is_slide: false,
+#                 cover: File.open(banner),
+#                 is_hidden: false])
+# end
+# puts "Banners created..."
 
 
 
@@ -53,62 +53,62 @@ puts "Banners created..."
 # 1. get books josn 2. get books categories 3. add book categories
 # 1. get books josn 4. add books
 
-# require 'json'
-# require 'set'
-#
-# puts "#{Rails.root}"
-#
-# img_folder = "#{Rails.root}/public/images/book-store"
-# puts img_folder
-#
-# file = "#{img_folder}/z-books-3.txt"
-# content = File.read(file)
-# content_json = JSON.parse(content)
+require 'json'
+require 'set'
+
+puts "#{Rails.root}"
+
+img_folder = "#{Rails.root}/public/images/book-store"
+puts img_folder
+
+file = "#{img_folder}/z-books-3.txt"
+content = File.read(file)
+content_json = JSON.parse(content)
 
 
 # ..............................
 #   2. get Book Categories
 # ..............................
 
-# categories = {}
-# content_json.each do |item|
-#
-#   main_category = item["main_category"]
-#   sub_category = item["sub_category"]
-#
-#   sub_categories = categories[main_category]
-#   if !sub_categories
-#     sub_categories = Set.new
-#     sub_categories << sub_category
-#   else
-#     sub_categories << sub_category
-#   end
-#
-#   categories[main_category] = sub_categories
-#
-# end
+categories = {}
+content_json.each do |item|
+
+  main_category = item["main_category"]
+  sub_category = item["sub_category"]
+
+  sub_categories = categories[main_category]
+  if !sub_categories
+    sub_categories = Set.new
+    sub_categories << sub_category
+  else
+    sub_categories << sub_category
+  end
+
+  categories[main_category] = sub_categories
+
+end
 
 
 # ..............................
 #   3. Add Book Categories
 # ..............................
 #
-# puts "Seeding......"
-# categories.each do |main_category, sub_categories|
-#   main_category = main_category.strip()
-#
-#   Category.create!([name: main_category, is_main_category: true])
-#   @main_category = Category.where(:name => main_category).first
-#
-#   sub_categories.each do |sub_category|
-#     sub_category = sub_category.strip()
-#
-#     Category.create!([name: sub_category, parent_category_id: @main_category.id])
-#     @sub_category = Category.where(:name => sub_category).first
-#   end
-# end
-#
-# puts "Categories Added Done...."
+puts "Seeding......"
+categories.each do |main_category, sub_categories|
+  main_category = main_category.strip()
+
+  Category.create!([name: main_category, is_main_category: true])
+  @main_category = Category.where(:name => main_category).first
+
+  sub_categories.each do |sub_category|
+    sub_category = sub_category.strip()
+
+    Category.create!([name: sub_category, parent_category_id: @main_category.id])
+    @sub_category = Category.where(:name => sub_category).first
+  end
+end
+
+puts "Categories Added Done...."
 
 
 # ..............................

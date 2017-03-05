@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
   def show
     @product = Product.find(params[:id])
     @photos = @product.photos.all
+    @category = Category.where("id = ?", @product.category_id).first
   end
 
   def add_to_cart
