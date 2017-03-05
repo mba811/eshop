@@ -342,7 +342,7 @@ a.category-link span {
 .footer-nav-list h5.footer-nav-title {
     color: #c20430;
     text-transform: capitalize;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: 350;
 }
 
@@ -378,7 +378,7 @@ a.category-link span {
     color: #a0988f;
     font-family: 'Open Sans', sans-serif;
     text-transform: none;
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 200;
 
     a:hover{
@@ -1118,39 +1118,12 @@ div.avatar-thumb i.delete{
 }
 
 
-
-
-
-// .avatar-thumbs .image{
-//   position:relative;
-//   float: left;
-//   width: 80px;
-//   height: 80px;
-//   margin-right: 10px;
-//   border: 1px solid transperent;
-//   display: inline-block;
-//   img{
-//     width: 75px;
-//     height: 75px;
-//   }
-//
-//   a.delete, a.delete i{
-//     display:none;
-//     position:absolute;
-//     top:0;
-//     right:0;
-//     width:30px;
-//     height:30px;
-//     text-indent:-999px;
-//     // background-color: red;
-//     z-index: 999;
-//   }
-// }
-//
-// .avatar-thumbs .image:hover {
-//   border-color: #c7c7c7;
-//   a.delete, a.delte i{
-//     display: block;
-//     z-index: 999;
-//   }
-// }
+// for pages
+.pages{
+  h5{
+    margin: 5px 0;
+  }
+  p{
+    margin: 15px 0;
+  }
+}
